@@ -20,6 +20,48 @@ return array(
                     ),
                 ),
             ),
+            'project' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/project[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\project',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'volunteers' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/volunteers[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\volunteers',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'project' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/project[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\project',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -48,6 +90,7 @@ return array(
                             ),
                         ),
                     ),
+
                 ),
             ),
         ),
@@ -73,7 +116,9 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Project' => 'Application\Controller\ProjectController',
+            'Application\Controller\Volunteers' => 'Application\Controller\VolunteersController'
         ),
     ),
     'view_manager' => array(
