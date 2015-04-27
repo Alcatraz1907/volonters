@@ -104,6 +104,132 @@ return array(
                     ),
                 ),
             ),
+            'about' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/about[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\about',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'vacancy' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/vacancy[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\vacancy',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'partners' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/partners[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\partners',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'group-reg' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/group-reg[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\group-reg',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'group-reg-action' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/group-reg-action[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\group-reg-action',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'volunteers-list' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/volunteers-list[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\volunteers-list',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'donor-page' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/donor-page[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\donor-page',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'donor-reg' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/donor-reg[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\donor-reg',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'donor-login' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/donor-login[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\donor-login',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -163,7 +289,16 @@ return array(
             'Application\Controller\Volunteers' => 'Application\Controller\VolunteersController',
             'Application\Controller\Admin' => 'Application\Controller\AdminController',
             'Application\Controller\AdminLog' => 'Application\Controller\AdminLogController',
-            'Application\Controller\PayForm' => 'Application\Controller\PayFormController'
+            'Application\Controller\PayForm' => 'Application\Controller\PayFormController',
+            'Application\Controller\About' => 'Application\Controller\AboutController',
+            'Application\Controller\Vacancy' => 'Application\Controller\VacancyController',
+            'Application\Controller\Partners' => 'Application\Controller\PartnersController',
+            'Application\Controller\GroupReg' => 'Application\Controller\GroupRegController',
+            'Application\Controller\GroupRegAction' => 'Application\Controller\GroupRegActionController',
+            'Application\Controller\VolunteersList' => 'Application\Controller\VolunteersListController',
+            'Application\Controller\DonorPage' => 'Application\Controller\DonorPageController',
+            'Application\Controller\DonorReg' => 'Application\Controller\DonorRegController',
+            'Application\Controller\DonorLogin' => 'Application\Controller\DonorLoginController'
         ),
     ),
     'view_manager' => array(
