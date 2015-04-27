@@ -34,6 +34,48 @@ return array(
                     ),
                 ),
             ),
+            'admin-log' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/admin-log[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\adminlog',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'pay-form' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/pay-form[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\payform',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'admin' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/admin[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\admin',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
             'volunteers' => array(
                 'type'    => 'segment',
                 'options' => array(
@@ -118,7 +160,10 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
             'Application\Controller\Project' => 'Application\Controller\ProjectController',
-            'Application\Controller\Volunteers' => 'Application\Controller\VolunteersController'
+            'Application\Controller\Volunteers' => 'Application\Controller\VolunteersController',
+            'Application\Controller\Admin' => 'Application\Controller\AdminController',
+            'Application\Controller\AdminLog' => 'Application\Controller\AdminLogController',
+            'Application\Controller\PayForm' => 'Application\Controller\PayFormController'
         ),
     ),
     'view_manager' => array(
