@@ -34,7 +34,7 @@ return array(
                     ),
                 ),
             ),
-            'add-project' => array(
+
 
             'admin-log' => array(
                 'type'    => 'segment',
@@ -78,20 +78,7 @@ return array(
                     ),
                 ),
             ),
-            'volunteers' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/add-project[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\addproject',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
+
             'add-report' => array(
                 'type'    => 'segment',
                 'options' => array(
@@ -359,7 +346,6 @@ return array(
                             ),
                         ),
                     ),
-
                 ),
             ),
         ),
@@ -437,5 +423,5 @@ return array(
             ),
         ),
     ),
-    ),
+
 );
