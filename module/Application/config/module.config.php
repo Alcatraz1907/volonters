@@ -34,6 +34,119 @@ return array(
                     ),
                 ),
             ),
+            'add-project' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/add-project[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\addproject',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'add-report' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/add-report[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\addreport',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'manage-funds' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/manage-funds[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\managefunds',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'vol-login' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/vol-login[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\vollogin',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'add-donation' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/add-donation[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\adddonation',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'translation' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/translation[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\translation',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'vol-registration' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/vol-registration[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\volregistration',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'donations' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/donations[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\donations',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+
             'volunteers' => array(
                 'type'    => 'segment',
                 'options' => array(
@@ -44,20 +157,6 @@ return array(
                     ),
                     'defaults' => array(
                         'controller' => 'Application\Controller\volunteers',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'project' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/project[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\project',
                         'action'     => 'index',
                     ),
                 ),
@@ -118,7 +217,17 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
             'Application\Controller\Project' => 'Application\Controller\ProjectController',
-            'Application\Controller\Volunteers' => 'Application\Controller\VolunteersController'
+            'Application\Controller\Volunteers' => 'Application\Controller\VolunteersController',
+
+             'Application\Controller\AddProject' => 'Application\Controller\AddProjectController',
+             'Application\Controller\AddReport' => 'Application\Controller\AddReportController',
+             'Application\Controller\Translation' => 'Application\Controller\TranslationController',
+             'Application\Controller\VolLogin' => 'Application\Controller\VolLoginController',
+             'Application\Controller\AddDonation' => 'Application\Controller\AddDonationController',
+             'Application\Controller\Donations' => 'Application\Controller\DonationsController',
+             'Application\Controller\ManageFunds' => 'Application\Controller\ManageFundsController',
+             'Application\Controller\VolRegistration' => 'Application\Controller\VolRegistrationController',
+
         ),
     ),
     'view_manager' => array(
