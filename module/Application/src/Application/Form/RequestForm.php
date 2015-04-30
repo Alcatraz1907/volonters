@@ -1,15 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Oleg
+ * User: admin
  * Date: 30.04.2015
- * Time: 16:58
+ * Time: 17:25
  */
 namespace Application\Form;
 use Zend\Form\Element;
 use Zend\Form\Form;
 
-class CategoriesSub extends Form {
+class RequestForm extends Form {
     public function __construct($name = null)
     {
         parent::__construct('');
@@ -22,7 +22,7 @@ class CategoriesSub extends Form {
         ));
 
         $this->add(array(
-            'name' => 'name',
+            'name' => 'phone',
             'type' => 'Zend\Form\Element\Text',
             'attributes' => array(
                 'class' => 'form-control',
@@ -33,9 +33,26 @@ class CategoriesSub extends Form {
                 'label_attributes' => array(
                     'class' => 'col-lg-4 control-label',
                 ),
-                'label' => 'Name',
+                'label' => 'Phone',
             ),
         ));
+
+        $this->add(array(
+            'name' => 'full_description',
+            'type' => 'Zend\Form\Element\Text',
+            'attributes' => array(
+                'class' => 'form-control',
+                'placeholder' => 'Type something...',
+                'required' => 'required',
+            ),
+            'options' => array(
+                'label_attributes' => array(
+                    'class' => 'col-lg-4 control-label',
+                ),
+                'label' => 'Full description',
+            ),
+        ));
+
 
 
         $this->add(array(
@@ -49,4 +66,4 @@ class CategoriesSub extends Form {
         ));
     }
 
-} 
+}

@@ -3,14 +3,13 @@
  * Created by PhpStorm.
  * User: Oleg
  * Date: 30.04.2015
- * Time: 16:46
+ * Time: 16:58
  */
 namespace Application\Form;
 use Zend\Form\Element;
 use Zend\Form\Form;
 
-
-class CategoriesMainForm extends Form {
+class CategoriesSubForm extends Form {
     public function __construct($name = null)
     {
         parent::__construct('');
