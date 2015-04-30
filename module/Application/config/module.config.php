@@ -34,8 +34,6 @@ return array(
                     ),
                 ),
             ),
-
-
             'admin-log' => array(
                 'type'    => 'segment',
                 'options' => array(
