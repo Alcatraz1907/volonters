@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: Ivan
  * Date: 30.04.2015
- * Time: 17:08
+ * Time: 17:10
  */
 
 namespace Application\Entity;
@@ -11,7 +11,7 @@ namespace Application\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /** @ORM\Entity */
-class IncomesMoney {
+class Donors {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -19,18 +19,11 @@ class IncomesMoney {
      */
     protected $id;
 
-    /** @ORM\Column(type="integer") */
-    protected $projects_id;
-
-    /** @ORM\Column(type="date") */
-    protected $date;
-
-    /** @ORM\Column(type="float") */
-    protected $sum;
+    /** @ORM\Column(type="string") */
+    protected $mail;
 
     /** @ORM\Column(type="string") */
-    protected $donor;
-
+    protected $password;
 
     public function exchangeArray($data)
     {
