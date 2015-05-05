@@ -41,7 +41,7 @@ class IncomesMaterials {
     protected $image_id;
 
     /** @ORM\Column(type="integer") */
-    protected $projects_id;
+    protected $tracking_code;
 
     public function exchangeArray($data)
     {

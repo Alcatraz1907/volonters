@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Ivan
- * Date: 30.04.2015
- * Time: 17:09
+ * User: admin
+ * Date: 05.05.2015
+ * Time: 16:16
  */
 
 namespace Application\Entity;
@@ -11,7 +11,7 @@ namespace Application\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /** @ORM\Entity */
-class Reports {
+class Donor_info {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -19,16 +19,17 @@ class Reports {
      */
     protected $id;
 
-    /** @ORM\Column(type="integer") */
-    protected $projects_id;
+    /** @ORM\Column(type="string") */
+    protected $phone;
 
-    /** @ORM\Column(type="integer") */
-    protected $image_id;
+    /** @ORM\Column(type="string") */
+    protected $skype;
 
+    /** @ORM\Column(type="string") */
+    protected $facebook;
 
-    /** @ORM\Column(type="text") */
-    protected $full_description;
-
+    /** @ORM\Column(type="string") */
+    protected $vkontakte;
 
     public function exchangeArray($data)
     {
@@ -45,4 +46,4 @@ class Reports {
     {
         return get_object_vars($this);
     }
-} 
+}
