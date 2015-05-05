@@ -34,20 +34,6 @@ return array(
                     ),
                 ),
             ),
-            'project' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/project[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\project',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
             'admin-log' => array(
                 'type'    => 'segment',
                 'options' => array(
@@ -62,20 +48,7 @@ return array(
                     ),
                 ),
             ),
-            'pay-form' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/pay-form[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\payform',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
+
             'admin' => array(
                 'type'    => 'segment',
                 'options' => array(
@@ -86,21 +59,6 @@ return array(
                     ),
                     'defaults' => array(
                         'controller' => 'Application\Controller\admin',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-
-            'add-report' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/add-report[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\addreport',
                         'action'     => 'index',
                     ),
                 ),
@@ -200,76 +158,6 @@ return array(
                     ),
                     'defaults' => array(
                         'controller' => 'Application\Controller\volunteers',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'about' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/about[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\about',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'vacancy' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/vacancy[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\vacancy',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'partners' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/partners[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\partners',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'group-reg' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/group-reg[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\group-reg',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'group-reg-action' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/group-reg-action[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\group-reg-action',
                         'action'     => 'index',
                     ),
                 ),
@@ -384,27 +272,16 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-            'Application\Controller\Project' => 'Application\Controller\ProjectController',
             'Application\Controller\Volunteers' => 'Application\Controller\VolunteersController',
-
-             'Application\Controller\AddProject' => 'Application\Controller\AddProjectController',
-             'Application\Controller\AddReport' => 'Application\Controller\AddReportController',
              'Application\Controller\Translation' => 'Application\Controller\TranslationController',
              'Application\Controller\VolLogin' => 'Application\Controller\VolLoginController',
              'Application\Controller\AddDonation' => 'Application\Controller\AddDonationController',
              'Application\Controller\Donations' => 'Application\Controller\DonationsController',
              'Application\Controller\ManageFunds' => 'Application\Controller\ManageFundsController',
-             'Application\Controller\VolRegistration' => 'Application\Controller\VolRegistrationController',
 
 
             'Application\Controller\Admin' => 'Application\Controller\AdminController',
             'Application\Controller\AdminLog' => 'Application\Controller\AdminLogController',
-            'Application\Controller\PayForm' => 'Application\Controller\PayFormController',
-            'Application\Controller\About' => 'Application\Controller\AboutController',
-            'Application\Controller\Vacancy' => 'Application\Controller\VacancyController',
-            'Application\Controller\Partners' => 'Application\Controller\PartnersController',
-            'Application\Controller\GroupReg' => 'Application\Controller\GroupRegController',
-            'Application\Controller\GroupRegAction' => 'Application\Controller\GroupRegActionController',
             'Application\Controller\VolunteersList' => 'Application\Controller\VolunteersListController',
             'Application\Controller\DonorPage' => 'Application\Controller\DonorPageController',
             'Application\Controller\DonorReg' => 'Application\Controller\DonorRegController',
