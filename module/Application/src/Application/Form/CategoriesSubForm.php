@@ -37,7 +37,6 @@ class CategoriesSubForm extends Form {
             ),
         ));
 
-
         $this->add(array(
             'name' => 'submit',
             'type' => 'Submit',

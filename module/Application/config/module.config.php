@@ -19,7 +19,15 @@ return array(
                 'drivers' => array(
                     'Application\Entity' => 'application_entities'
                 )
-            )
+            ),
+        'authentication' => array(
+            'orm_default' => array(
+                'object_manager' => 'Doctrine\ORM\EntityManager',
+                'identity_class' => 'Application\Entity\User',
+                'identity_property' => 'email',
+                'credential_property' => 'password',
+                ),
+            ),
         )
     ),
     'router' => array(
