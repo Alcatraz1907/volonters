@@ -10,7 +10,7 @@ namespace Application\Form;
 use Zend\InputFilter\InputFilter;
 
 
-class DonorsInputFilter extends InputFilter{
+class LoginDonorsInputFilter extends InputFilter{
     public function __construct($sm)
 {
     $this->add(array(

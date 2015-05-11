@@ -7,8 +7,33 @@
  */
 
 namespace Application\Form;
+use Zend\InputFilter\InputFilter;
 
-
-class SearchDonationsInputFilter {
+class SearchDonationsInputFilter extends InputFilter {
+    public function __construct($sm)
+    {
+        $this->add(array(
+            'name' => 'direction', // 'usr_name'
+            'required' => true
+        ));
+        $this->add(array(
+            'name' => 'search', // usr_password
+            'required' => true,
+            'filters' => array(
+                array('name' => 'StripTags'),
+                array('name' => 'StringTrim'),
+            ),
+            'validators' => array(
+                array(
+                    'name' => 'StringLength',
+                    'options' => array(
+                        'encoding' => 'UTF-8',
+                        'min' => 6,
+                        'max' => 34,
+                    ),
+                ),
+            ),
+        ));
+    }
 
 } 

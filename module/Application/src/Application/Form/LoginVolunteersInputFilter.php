@@ -7,7 +7,7 @@
  */
 namespace Application\Form;
 use Zend\InputFilter\InputFilter;
-class VolunteersInputFilter extends InputFilter{
+class LoginVolunteersInputFilter extends InputFilter{
     public function __construct($sm)
     {
         $this->add(array(

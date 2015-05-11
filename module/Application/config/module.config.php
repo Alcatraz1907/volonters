@@ -285,12 +285,17 @@ return array(
             'Application\Controller\VolLogin' => 'Application\Controller\VolLoginController',
             'Application\Controller\AddDonation' => 'Application\Controller\AddDonationController',
             'Application\Controller\Donations' => 'Application\Controller\DonationsController',
+             'Application\Controller\Translation' => 'Application\Controller\TranslationController',
+             'Application\Controller\VolLogin' => 'Application\Controller\VolLoginController',
+             'Application\Controller\AddDonation' => 'Application\Controller\AddDonationController',
+             'Application\Controller\Donations' => 'Application\Controller\DonationsController',
             'Application\Controller\Admin' => 'Application\Controller\AdminController',
             'Application\Controller\AdminLog' => 'Application\Controller\AdminLogController',
             'Application\Controller\VolunteersList' => 'Application\Controller\VolunteersListController',
             'Application\Controller\DonorPage' => 'Application\Controller\DonorPageController',
             'Application\Controller\DonorReg' => 'Application\Controller\DonorRegController',
             'Application\Controller\DonorLogin' => 'Application\Controller\DonorLoginController'
+
         ),
     ),
     'view_manager' => array(
