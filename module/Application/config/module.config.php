@@ -272,27 +272,13 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-
             'Application\Controller\Volunteers' => 'Application\Controller\VolunteersController',
-
-
-
              'Application\Controller\Translation' => 'Application\Controller\TranslationController',
              'Application\Controller\VolLogin' => 'Application\Controller\VolLoginController',
              'Application\Controller\AddDonation' => 'Application\Controller\AddDonationController',
              'Application\Controller\Donations' => 'Application\Controller\DonationsController',
-
-
-
-
             'Application\Controller\Admin' => 'Application\Controller\AdminController',
             'Application\Controller\AdminLog' => 'Application\Controller\AdminLogController',
-
-
-
-
-
-
             'Application\Controller\VolunteersList' => 'Application\Controller\VolunteersListController',
             'Application\Controller\DonorPage' => 'Application\Controller\DonorPageController',
             'Application\Controller\DonorReg' => 'Application\Controller\DonorRegController',

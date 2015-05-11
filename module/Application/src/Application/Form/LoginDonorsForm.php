@@ -11,13 +11,13 @@ use Zend\Form\Element;
 use Zend\Form\Form;
 
 
-class DonorsForm extends  Form  {
+class LoginDonorsForm extends  Form  {
     public function __construct($name = null)
     {
 // we want to ignore the name passed
         parent::__construct('login');
         parent::setAttribute('method', 'post');
-        parent::setAttribute('class', 'navbar-form navbar-right');
+        parent::setAttribute('class', 'navbar-form navbar-left');
         parent::setAttribute('style','margin-right: 1px;');
 
         $this->add(array(

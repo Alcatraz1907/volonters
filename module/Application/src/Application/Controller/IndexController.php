@@ -9,6 +9,9 @@
 
 namespace Application\Controller;
 
+use Application\Form\LoginDonorsForm;
+use Application\Form\LoginVolunteersForm;
+use Application\Form\SearchDonationsForm;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -16,8 +19,16 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
+
+        $formDonors = new LoginDonorsForm();
+        $formVolunteers = new LoginVolunteersForm();
+        $formSearch= new SearchDonationsForm();
+
         return new ViewModel(array(
             'data' => array("data"=>"test2"),
+            'formDonors' => $formDonors,
+            'formVolunteers' => $formVolunteers,
+            'formSearch' => $formSearch
 
         ));
 
