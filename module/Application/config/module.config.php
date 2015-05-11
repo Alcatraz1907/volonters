@@ -56,7 +56,6 @@ return array(
                     ),
                 ),
             ),
-
             'admin' => array(
                 'type'    => 'segment',
                 'options' => array(
@@ -71,6 +70,7 @@ return array(
                     ),
                 ),
             ),
+
             'manage-funds' => array(
                 'type'    => 'segment',
                 'options' => array(
@@ -127,20 +127,6 @@ return array(
                     ),
                 ),
             ),
-            'vol-registration' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/vol-registration[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\volregistration',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
             'donations' => array(
                 'type'    => 'segment',
                 'options' => array(
@@ -166,6 +152,20 @@ return array(
                     ),
                     'defaults' => array(
                         'controller' => 'Application\Controller\volunteers',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            'partners' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/partners[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\partners',
                         'action'     => 'index',
                     ),
                 ),
@@ -280,16 +280,27 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
+
             'Application\Controller\Volunteers' => 'Application\Controller\VolunteersController',
+
+
+
              'Application\Controller\Translation' => 'Application\Controller\TranslationController',
              'Application\Controller\VolLogin' => 'Application\Controller\VolLoginController',
              'Application\Controller\AddDonation' => 'Application\Controller\AddDonationController',
              'Application\Controller\Donations' => 'Application\Controller\DonationsController',
-             'Application\Controller\ManageFunds' => 'Application\Controller\ManageFundsController',
+
+
 
 
             'Application\Controller\Admin' => 'Application\Controller\AdminController',
             'Application\Controller\AdminLog' => 'Application\Controller\AdminLogController',
+
+
+
+
+
+
             'Application\Controller\VolunteersList' => 'Application\Controller\VolunteersListController',
             'Application\Controller\DonorPage' => 'Application\Controller\DonorPageController',
             'Application\Controller\DonorReg' => 'Application\Controller\DonorRegController',
