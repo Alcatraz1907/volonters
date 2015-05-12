@@ -38,4 +38,37 @@ class InfPages {
     {
         return get_object_vars($this);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFilePath()
+    {
+        return $this->file_path;
+    }
+
+    /**
+     * @param mixed $file_path
+     */
+    public function setFilePath($file_path)
+    {
+        $this->file_path = $file_path;
+    }
+
 } 

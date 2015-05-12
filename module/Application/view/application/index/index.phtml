@@ -12,7 +12,7 @@ $formDonors->prepare();
 echo $this->form()->openTag($formDonors);
 
 
-echo $this->formRow($formDonors->get('login'));
+echo $this->formRow($formDonors->get('mail'));
 echo $this->formRow($formDonors->get('password'));
 echo $this->formSubmit($formDonors->get('submit'));
 

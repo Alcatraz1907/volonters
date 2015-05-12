@@ -46,4 +46,84 @@ class DonorInfo {
     {
         return get_object_vars($this);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param mixed $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSkype()
+    {
+        return $this->skype;
+    }
+
+    /**
+     * @param mixed $skype
+     */
+    public function setSkype($skype)
+    {
+        $this->skype = $skype;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFacebook()
+    {
+        return $this->facebook;
+    }
+
+    /**
+     * @param mixed $facebook
+     */
+    public function setFacebook($facebook)
+    {
+        $this->facebook = $facebook;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVkontakte()
+    {
+        return $this->vkontakte;
+    }
+
+    /**
+     * @param mixed $vkontakte
+     */
+    public function setVkontakte($vkontakte)
+    {
+        $this->vkontakte = $vkontakte;
+    }
 }
