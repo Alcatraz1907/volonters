@@ -47,4 +47,85 @@ class Language {
     {
         return get_object_vars($this);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTable()
+    {
+        return $this->table;
+    }
+
+    /**
+     * @param mixed $table
+     */
+    public function setTable($table)
+    {
+        $this->table = $table;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getField()
+    {
+        return $this->field;
+    }
+
+    /**
+     * @param mixed $field
+     */
+    public function setField($field)
+    {
+        $this->field = $field;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFieldId()
+    {
+        return $this->field_id;
+    }
+
+    /**
+     * @param mixed $field_id
+     */
+    public function setFieldId($field_id)
+    {
+        $this->field_id = $field_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEnglishText()
+    {
+        return $this->english_text;
+    }
+
+    /**
+     * @param mixed $english_text
+     */
+    public function setEnglishText($english_text)
+    {
+        $this->english_text = $english_text;
+    }
+
 } 

@@ -58,4 +58,149 @@ class IncomesMaterials {
     {
         return get_object_vars($this);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategoriesMainId()
+    {
+        return $this->categories_main_id;
+    }
+
+    /**
+     * @param mixed $categories_main_id
+     */
+    public function setCategoriesMainId($categories_main_id)
+    {
+        $this->categories_main_id = $categories_main_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCotegoriesSubId()
+    {
+        return $this->cotegories_sub_id;
+    }
+
+    /**
+     * @param mixed $cotegories_sub_id
+     */
+    public function setCotegoriesSubId($cotegories_sub_id)
+    {
+        $this->cotegories_sub_id = $cotegories_sub_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param mixed $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDonor()
+    {
+        return $this->donor;
+    }
+
+    /**
+     * @param mixed $donor
+     */
+    public function setDonor($donor)
+    {
+        $this->donor = $donor;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFullDescription()
+    {
+        return $this->full_description;
+    }
+
+    /**
+     * @param mixed $full_description
+     */
+    public function setFullDescription($full_description)
+    {
+        $this->full_description = $full_description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImageId()
+    {
+        return $this->image_id;
+    }
+
+    /**
+     * @param mixed $image_id
+     */
+    public function setImageId($image_id)
+    {
+        $this->image_id = $image_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTrackingCode()
+    {
+        return $this->tracking_code;
+    }
+
+    /**
+     * @param mixed $tracking_code
+     */
+    public function setTrackingCode($tracking_code)
+    {
+        $this->tracking_code = $tracking_code;
+    }
+
 } 

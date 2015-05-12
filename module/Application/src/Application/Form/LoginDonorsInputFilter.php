@@ -14,7 +14,7 @@ class LoginDonorsInputFilter extends InputFilter{
     public function __construct($sm)
 {
     $this->add(array(
-        'name' => 'login', // 'usr_name'
+        'name' => 'mail', // 'usr_name'
         'required' => true,
         'filters' => array(
             array('name' => 'StripTags'),

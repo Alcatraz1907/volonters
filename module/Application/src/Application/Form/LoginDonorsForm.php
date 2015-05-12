@@ -15,17 +15,17 @@ class LoginDonorsForm extends  Form  {
     public function __construct($name = null)
     {
 // we want to ignore the name passed
-        parent::__construct('login');
+        parent::__construct();
         parent::setAttribute('method', 'post');
         parent::setAttribute('class', 'navbar-form navbar-left');
         parent::setAttribute('style','margin-right: 1px;');
 
         $this->add(array(
-            'name' => 'login', // 'usr_name',
+            'name' => 'mail', // 'usr_name',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
-                'placeholder' => 'Login',
+                'placeholder' => 'Mail',
                 'required' => 'required',
             ),
         ));

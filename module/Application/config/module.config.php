@@ -9,6 +9,14 @@
 
 return array(
     'doctrine' => array(
+        'authentication' => array(
+            'orm_default' => array(
+                'object_manager' => 'Doctrine\ORM\EntityManager',
+                'identity_class' => 'Application\Entity\Donors',
+                'identity_property' => 'mail',
+                'credential_property' => 'password',
+            ),
+        ),
         'driver' => array(
             'application_entities' => array(
                 'class' =>'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
@@ -273,10 +281,10 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
             'Application\Controller\Volunteers' => 'Application\Controller\VolunteersController',
-             'Application\Controller\Translation' => 'Application\Controller\TranslationController',
-             'Application\Controller\VolLogin' => 'Application\Controller\VolLoginController',
-             'Application\Controller\AddDonation' => 'Application\Controller\AddDonationController',
-             'Application\Controller\Donations' => 'Application\Controller\DonationsController',
+            'Application\Controller\Translation' => 'Application\Controller\TranslationController',
+            'Application\Controller\VolLogin' => 'Application\Controller\VolLoginController',
+            'Application\Controller\AddDonation' => 'Application\Controller\AddDonationController',
+            'Application\Controller\Donations' => 'Application\Controller\DonationsController',
             'Application\Controller\Admin' => 'Application\Controller\AdminController',
             'Application\Controller\AdminLog' => 'Application\Controller\AdminLogController',
             'Application\Controller\VolunteersList' => 'Application\Controller\VolunteersListController',

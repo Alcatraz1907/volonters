@@ -40,4 +40,53 @@ class CategoriesSub {
     {
         return get_object_vars($this);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategoriesMainId()
+    {
+        return $this->categories_main_id;
+    }
+
+    /**
+     * @param mixed $categories_main_id
+     */
+    public function setCategoriesMainId($categories_main_id)
+    {
+        $this->categories_main_id = $categories_main_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
 } 
