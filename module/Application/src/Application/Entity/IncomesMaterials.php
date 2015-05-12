@@ -31,8 +31,8 @@ class IncomesMaterials {
     /** @ORM\Column(type="date") */
     protected $date;
 
-    /** @ORM\Column(type="string") */
-    protected $donor;
+    /** @ORM\Column(type="integer") */
+    protected $donor_id;
 
     /** @ORM\Column(type="text") */
     protected $full_description;
