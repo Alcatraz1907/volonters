@@ -28,7 +28,7 @@ class IncomesMaterials {
     /** @ORM\Column(type="string") */
     protected $name;
 
-    /** @ORM\Column(type="date") */
+    /** @ORM\Column(type="string") */
     protected $date;
 
     /** @ORM\Column(type="integer") */
@@ -142,19 +142,18 @@ class IncomesMaterials {
     /**
      * @return mixed
      */
-    public function getDonor()
+    public function getDonorId()
     {
-        return $this->donor;
+        return $this->donor_id;
     }
 
     /**
-     * @param mixed $donor
+     * @param mixed $donor_id
      */
-    public function setDonor($donor)
+    public function setDonorId($donor_id)
     {
-        $this->donor = $donor;
+        $this->donor_id = $donor_id;
     }
-
     /**
      * @return mixed
      */

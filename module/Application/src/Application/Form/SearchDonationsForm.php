@@ -26,13 +26,13 @@ class SearchDonationsForm extends Form {
             'options' => array(
                 'label' => 'Пошук за',
                 'value_options' => array(
-                    '0' => 'Номером',
+                    'number' => 'Номером',
 
-                    '1' => 'Ім’ям',
+                    'name' => 'Ім’ям',
                 ),
             ),
             'attributes' => array(
-                'value' => '0' //set checked to '1'
+                'value' => 'number' //set checked to '1'
             )
         ));
 

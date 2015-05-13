@@ -6,7 +6,7 @@ $this->headTitle($title);
 ?>
     <h1><center><?php echo $this->escapeHtml($title); ?></center></h1>
 <?php
-$formDonors->setAttribute('action', $this->url('home', array('action' => 'index')));
+$formDonors->setAttribute('action', $this->url('site/home', array('action' => 'index')));
 $formDonors->prepare();
 
 echo $this->form()->openTag($formDonors);
@@ -23,7 +23,7 @@ echo $this->form()->closeTag();
 
 
 <?php
-$formVolunteers->setAttribute('action', $this->url('home', array('action' => 'index')));
+$formVolunteers->setAttribute('action', $this->url('site/home', array('action' => 'index')));
 $formVolunteers->prepare();
 
 echo $this->form()->openTag($formDonors);
@@ -39,7 +39,7 @@ echo $this->form()->closeTag();
 
 
 <?php
-$formSearch->setAttribute('action', $this->url('home', array('action' => 'index')));
+$formSearch->setAttribute('action', $this->url('site/home', array('action' => 'search')));
 $formSearch->prepare();
 
 echo $this->form()->openTag($formSearch);

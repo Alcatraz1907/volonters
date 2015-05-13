@@ -32,230 +32,220 @@ return array(
     ),
     'router' => array(
         'routes' => array(
-            'home' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
+            'site' => array(
+                'type' => 'hostname',
                 'options' => array(
-                    'route'    => '/',
+                    //set route hostname locally
+                    'route' => 'volonters.dev',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
-            ),
-            'admin-log' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/admin-log[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\adminlog',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'admin' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/admin[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\admin',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-
-            'manage-funds' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/manage-funds[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\managefunds',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'vol-login' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/vol-login[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\vollogin',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'add-donation' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/add-donation[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\adddonation',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'translation' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/translation[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\translation',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'donations' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/donations[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\donations',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-
-            'volunteers' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/volunteers[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\volunteers',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'partners' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/partners[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\partners',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'volunteers-list' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/volunteers-list[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\volunteers-list',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'donor-page' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/donor-page[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\donor-page',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'donor-reg' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/donor-reg[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\donor-reg',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            'donor-login' => array(
-                'type'    => 'segment',
-                'options' => array(
-                    'route'    => '/donor-login[/:action][/:id]',
-                    'constraints' => array(
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                        'id'     => '[0-9]+',
-                    ),
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\donor-login',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-            // The following is a route to simplify getting started creating
-            // new controllers and actions without needing to create a new
-            // module. Simply drop new controllers in, and you can access them
-            // using the path /application/:controller/:action
-            'application' => array(
-                'type'    => 'Literal',
-                'options' => array(
-                    'route'    => '/application',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Application\Controller',
-                        'controller'    => 'Index',
-                        'action'        => 'index',
-                    ),
-                ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                    'default' => array(
-                        'type'    => 'Segment',
+                    // Site section
+                    'home' => array(
+                        'type' => 'segment',
                         'options' => array(
-                            'route'    => '/[:controller[/:action]]',
+                            'route'    => '/[:action][/:id]',
                             'constraints' => array(
-                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'     => '[0-9]+',
                             ),
                             'defaults' => array(
+                                'controller' => 'Application\Controller\Index',
+                                'action'     => 'index',
+                            ),
+                        ),
+                    ),
+                    'admin-log' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/admin-log[/:action][/:id]',
+                            'constraints' => array(
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'     => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Application\Controller\adminlog',
+                                'action'     => 'index',
+                            ),
+                        ),
+                    ),
+                    'admin' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/admin[/:action][/:id]',
+                            'constraints' => array(
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'     => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Application\Controller\admin',
+                                'action'     => 'index',
+                            ),
+                        ),
+                    ),
+
+                    'manage-funds' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/manage-funds[/:action][/:id]',
+                            'constraints' => array(
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'     => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Application\Controller\managefunds',
+                                'action'     => 'index',
+                            ),
+                        ),
+                    ),
+                    'vol-login' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/vol-login[/:action][/:id]',
+                            'constraints' => array(
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'     => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Application\Controller\vollogin',
+                                'action'     => 'index',
+                            ),
+                        ),
+                    ),
+                    'add-donation' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/add-donation[/:action][/:id]',
+                            'constraints' => array(
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'     => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Application\Controller\adddonation',
+                                'action'     => 'index',
+                            ),
+                        ),
+                    ),
+                    'translation' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/translation[/:action][/:id]',
+                            'constraints' => array(
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'     => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Application\Controller\translation',
+                                'action'     => 'index',
+                            ),
+                        ),
+                    ),
+                    'donations' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/donations[/:action][/:id]',
+                            'constraints' => array(
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'     => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Application\Controller\donations',
+                                'action'     => 'index',
+                            ),
+                        ),
+                    ),
+
+                    'volunteers' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/volunteers[/:action][/:id]',
+                            'constraints' => array(
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'     => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Application\Controller\volunteers',
+                                'action'     => 'index',
+                            ),
+                        ),
+                    ),
+                    'partners' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/partners[/:action][/:id]',
+                            'constraints' => array(
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'     => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Application\Controller\partners',
+                                'action'     => 'index',
+                            ),
+                        ),
+                    ),
+                    'volunteers-list' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/volunteers-list[/:action][/:id]',
+                            'constraints' => array(
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'     => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Application\Controller\volunteers-list',
+                                'action'     => 'index',
+                            ),
+                        ),
+                    ),
+                    'donor-page' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/donor-page[/:action][/:id]',
+                            'constraints' => array(
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'     => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Application\Controller\donor-page',
+                                'action'     => 'index',
+                            ),
+                        ),
+                    ),
+                    'donor-reg' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/donor-reg[/:action][/:id]',
+                            'constraints' => array(
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'     => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Application\Controller\donor-reg',
+                                'action'     => 'index',
+                            ),
+                        ),
+                    ),
+                    'donor-login' => array(
+                        'type'    => 'segment',
+                        'options' => array(
+                            'route'    => '/donor-login[/:action][/:id]',
+                            'constraints' => array(
+                                'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'     => '[0-9]+',
+                            ),
+                            'defaults' => array(
+                                'controller' => 'Application\Controller\donor-login',
+                                'action'     => 'index',
                             ),
                         ),
                     ),
                 ),
             ),
+
         ),
     ),
     'service_manager' => array(

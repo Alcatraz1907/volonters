@@ -28,8 +28,7 @@ class SearchDonationsInputFilter extends InputFilter {
                     'name' => 'StringLength',
                     'options' => array(
                         'encoding' => 'UTF-8',
-                        'min' => 6,
-                        'max' => 34,
+
                     ),
                 ),
             ),
