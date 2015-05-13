@@ -48,7 +48,7 @@ class IndexController extends AbstractActionController
                     foreach ($authResult->getMessages() as $message) {
                         $messages .= "$message\n";
                     }
-                    return $this->redirect()->toRoute('donor-page');
+                    return $this->redirect()->toRoute('site/donor-page');
                 }
             }
 

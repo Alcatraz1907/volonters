@@ -6,4 +6,6 @@
  * Time: 16:42
  */
 echo "donor-page";
-//echo $this->escapeHtml($user->getMail());
+if ($donor = $this->identity()) {
+    echo '<br>Logged in as ' . $this->escapeHtml($donor->getMail());
+}
