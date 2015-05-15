@@ -13,11 +13,29 @@ class SearchDonationsInputFilter extends InputFilter {
     public function __construct($sm)
     {
         $this->add(array(
-            'name' => 'direction', // 'usr_name'
+            'name' => 'direction',
             'required' => true
         ));
         $this->add(array(
-            'name' => 'search', // usr_password
+            'name' => 'name',
+            'required' => true,
+            'filters' => array(
+                array('name' => 'StripTags'),
+                array('name' => 'StringTrim'),
+            ),
+            'validators' => array(
+                array(
+                    'name' => 'StringLength',
+                    'options' => array(
+                        'encoding' => 'UTF-8',
+
+                    ),
+                ),
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'tracking_code',
             'required' => true,
             'filters' => array(
                 array('name' => 'StripTags'),

@@ -19,29 +19,21 @@ class SearchDonationsForm extends Form {
         parent::setAttribute('class', 'navbar-form navbar-left');
         parent::setAttribute('style','margin-right: 1px;');
 
-
         $this->add(array(
-            'type' => 'Zend\Form\Element\Radio',
-            'name' => 'direction',
-            'options' => array(
-                'label' => 'Пошук за',
-                'value_options' => array(
-                    'number' => 'Номером',
-
-                    'name' => 'Ім’ям',
-                ),
-            ),
-            'attributes' => array(
-                'value' => 'number' //set checked to '1'
-            )
-        ));
-
-        $this->add(array(
-            'name' => 'search', // 'usr_password',
+            'name' => 'name', // 'usr_password',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
-                'placeholder' => 'Search',
+                'placeholder' => 'Search Name',
+                'required' => 'required',
+            ),
+        ));
+        $this->add(array(
+            'name' => 'tracking_code', // 'usr_password',
+            'attributes' => array(
+                'type' => 'text',
+                'class' => 'form-control',
+                'placeholder' => 'Search Tracking Code',
                 'required' => 'required',
             ),
         ));

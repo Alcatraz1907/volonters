@@ -15,6 +15,7 @@ class CategoriesMain {
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
+     * @ORM\OneToMany(targetEntity="IncomesMaterials", mappedBy="id")
      */
     protected $id;
 

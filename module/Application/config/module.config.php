@@ -36,7 +36,6 @@ return array(
                 'type' => 'hostname',
                 'options' => array(
                     //set route hostname locally
-                    'route' => 'volonteers.dev',
                     'route' => 'volunteers.dev',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Index',

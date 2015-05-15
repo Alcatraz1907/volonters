@@ -19,11 +19,13 @@ class IncomesMaterials {
      */
     protected $id;
 
-    /** @ORM\Column(type="integer") */
+    /** @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="CategoriesMain",  inversedBy="id")
+     */
     protected $categories_main_id;
 
     /** @ORM\Column(type="integer") */
-    protected $cotegories_sub_id;
+    protected $categories_sub_id;
 
     /** @ORM\Column(type="string") */
     protected $name;
@@ -94,17 +96,17 @@ class IncomesMaterials {
     /**
      * @return mixed
      */
-    public function getCotegoriesSubId()
+    public function getCategoriesSubId()
     {
-        return $this->cotegories_sub_id;
+        return $this->categories_sub_id;
     }
 
     /**
      * @param mixed $cotegories_sub_id
      */
-    public function setCotegoriesSubId($cotegories_sub_id)
+    public function setCategoriesSubId($cotegories_sub_id)
     {
-        $this->cotegories_sub_id = $cotegories_sub_id;
+        $this->categories_sub_id = $cotegories_sub_id;
     }
 
     /**

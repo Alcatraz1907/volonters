@@ -10,8 +10,8 @@ $form->setAttribute('action', $this->url('site/home', array('action' => 'search'
 $form->prepare();
 
 echo $this->form()->openTag($form);
-echo $this->formRow($form->get('direction'));
-echo $this->formRow($form->get('search'));
+echo $this->formRow($form->get('name'));
+echo $this->formRow($form->get('tracking_code'));
 echo $this->formSubmit($form->get('submit'));
 
 echo $this->form()->closeTag();

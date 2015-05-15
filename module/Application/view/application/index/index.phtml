@@ -45,9 +45,8 @@ $formSearch->prepare();
 echo $this->form()->openTag($formSearch);
 
 
-echo $this->formRow($formSearch->get('direction'));
-
-echo $this->formRow($formSearch->get('search'));
+echo $this->formRow($formSearch->get('name'));
+echo $this->formRow($formSearch->get('tracking_code'));
 echo $this->formSubmit($formSearch->get('submit'));
 
 echo $this->form()->closeTag();

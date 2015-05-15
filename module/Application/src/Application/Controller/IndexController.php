@@ -23,7 +23,7 @@ class IndexController extends AbstractActionController
     {
         $form = new LoginDonorsForm();
         $formVolunteers = new LoginVolunteersForm();
-        $formSearch= new SearchDonationsForm();
+        $formSearch = new SearchDonationsForm();
 
         $messages = null;
         $request = $this->getRequest();
@@ -114,25 +114,28 @@ class IndexController extends AbstractActionController
         $request = $this->getRequest();
         if ($request->isPost()) {
             // TODO fix the filters
-            $form->setInputFilter(new SearchDonationsInputFilter($this->getServiceLocator()));
+      //  die(print_r($request->getPost()));
+            //$form->setInputFilter(new SearchDonationsInputFilter($this->getServiceLocator()));
             $form->setData($request->getPost());
 
             if ($form->isValid()) {
                 $data = $form->getData();
-                //die(print_r($data['search']));
+                //die(print_r($data));
                 $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
                 $query = $em->createQuery("SELECT im.name,
                                                   im.tracking_code,
                                                   im.date,
-                                                  im.full_description
+                                                  im.full_description,
+                                                  CM.name AS name_cm,
+                                                  CS.name AS name_cs
                                                    FROM Application\Entity\IncomesMaterials AS im
-                                                    WHERE
+                                                    INNER JOIN Application\Entity\CategoriesMain AS CM ON CM.id = im.id
+                                                    INNER JOIN Application\Entity\CategoriesSub AS CS ON CS.id = im.id
+                                                   WHERE
                                                         im.name
-                                                        LIKE :name");
-                $query->setParameter('name', '%' . $data['search'] . '%');
+                                                        LIKE ".$data['search'].";");
+                $query->setParameter('name',$data['search']);
 
-                //->setParameter('companyID', $companyID);
-//                die(print_r($query->getResult()));
                 $incomes_materials = $query->getResult();
 
             }
@@ -143,6 +146,82 @@ class IndexController extends AbstractActionController
                 'incomes_materials' => $incomes_materials,
             )
         );
+    }
+
+    public function testAction(){
+        $form = new SearchDonationsForm();
+
+        $users_array = array();
+        $categories_main_array = array();
+        $categories_sub_array = array();
+        $name = 0;
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $form->setData($request->getPost());
+            if ($form->isValid()) {
+                $data = $form->getData();
+
+                $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+                $qb = $em->createQueryBuilder();
+                // $users = $em->getRepository('Application\Entity\IncomesMaterials')->findAll();
+                if($data['name']) {
+                    $users = $em->createQuery("SELECT im.name,
+                                          im.date,
+                                          im.categories_main_id,
+                                          im.categories_sub_id,
+                                          im.categories_sub_id,
+                                          im.donor_id,
+                                          im.full_description,
+                                          im.image_id
+                                      FROM Application\Entity\IncomesMaterials  im
+                                      WHERE cm.name = " . $data['name'] . "
+                                    ")
+                        ->getResult();
+                }else{
+                    $users = $em->createQuery("SELECT im.name,
+                                          im.date,
+                                          im.categories_main_id,
+                                          im.categories_sub_id,
+                                          im.categories_sub_id,
+                                          im.donor_id,
+                                          im.full_description,
+                                          im.tracking_code
+                                      FROM Application\Entity\IncomesMaterials  im
+                                      WHERE cm.name = " . $data['name'] . "
+                                    ")
+                        ->getResult();
+                }
+                $users = $em->createQuery("SELECT cm.name
+
+                                      FROM Application\Entity\CategoriesMain  cm
+                                      WHERE cm.id = " . $users[0]['categories_main_id'] . "
+                                    ");
+
+                $users = $em->createQuery("SELECT cs.name
+
+                                      FROM Application\Entity\CategoriesSub  cs
+                                      WHERE cs.id = " . $users[0]['categories_sub_id'] . "
+                                    ");
+//        $users = $qb->select('u')
+//            ->from('Application\Entity\IncomesMaterials', 'u')
+//            ->where('u.id = ?1')
+//            ->orderBy('u.name', 'ASC')
+//            ->getQuery()
+//            ->getResult();
+//        echo $qb;
+//        $users = $em->createQuery($qb);
+                //   $message = $this->params()->fromQuery('message', 'foo');
+
+//        $entityManager        = $this->getEntityManager();
+//        $repository           = $entityManager->getRepository('Application\Entity\IncomesMaterials');
+//        $categories           = $repository->findBy(array(), array('path' => 'asc'));
+            }
+        }
+        return new ViewModel(array(
+        //    'message' => $message,
+            'users'	=> $users->getResult(),
+//			'myUsers' => $myUsers
+        ));
     }
 
 }
