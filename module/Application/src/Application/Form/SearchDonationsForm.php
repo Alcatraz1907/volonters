@@ -21,28 +21,34 @@ class SearchDonationsForm extends Form {
 
 
         $this->add(array(
-            'type' => 'Zend\Form\Element\Radio',
-            'name' => 'direction',
-            'options' => array(
-                'label' => 'Пошук за',
-                'value_options' => array(
-                    'number' => 'Номером',
-
-                    'name' => 'Ім’ям',
-                ),
-            ),
-            'attributes' => array(
-                'value' => 'number' //set checked to '1'
-            )
-        ));
-
-        $this->add(array(
-            'name' => 'search', // 'usr_password',
+            'name' => 'SearchOfNumber', // 'usr_password',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
-                'placeholder' => 'Search',
-                'required' => 'required',
+                'placeholder' => 'SearchOfNumber',
+
+            ),
+            'options' => array(
+                'label_attributes'=> array(
+                    'class' => 'col-lg-7 control-label',
+                ),
+                'label' => 'За телефоном',
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'SearchOfCod', // 'usr_password',
+            'attributes' => array(
+                'type' => 'text',
+                'class' => 'form-control',
+                'placeholder' => 'SearchOfCod',
+
+            ),
+            'options' => array(
+                'label_attributes'=> array(
+                    'class' => 'col-lg-7 control-label',
+                ),
+                'label' => 'За трек кодом',
             ),
         ));
         $this->add(array(
