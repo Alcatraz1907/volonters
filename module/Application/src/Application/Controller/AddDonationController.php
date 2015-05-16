@@ -11,11 +11,19 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Application\Form\AddDonationForm;
+
 
 class AddDonationController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+        $formAddDonation =new AddDonationForm();
+        return new ViewModel((array(
+            'data' => array("data"=>"test2"),
+
+            'formAddDonation' => $formAddDonation,
+
+        )));
     }
 } 
