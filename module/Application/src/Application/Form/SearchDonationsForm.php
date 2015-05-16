@@ -19,22 +19,36 @@ class SearchDonationsForm extends Form {
         parent::setAttribute('class', 'navbar-form navbar-left');
         parent::setAttribute('style','margin-right: 1px;');
 
+
         $this->add(array(
             'name' => 'name', // 'usr_password',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
-                'placeholder' => 'Search Name',
-                'required' => 'required',
+                'placeholder' => 'SearchOfNumber',
+
+            ),
+            'options' => array(
+                'label_attributes'=> array(
+                    'class' => 'col-lg-7 control-label',
+                ),
+                'label' => 'За телефоном',
             ),
         ));
+
         $this->add(array(
             'name' => 'tracking_code', // 'usr_password',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
-                'placeholder' => 'Search Tracking Code',
-                'required' => 'required',
+                'placeholder' => 'SearchOfCod',
+
+            ),
+            'options' => array(
+                'label_attributes'=> array(
+                    'class' => 'col-lg-7 control-label',
+                ),
+                'label' => 'За трек кодом',
             ),
         ));
         $this->add(array(

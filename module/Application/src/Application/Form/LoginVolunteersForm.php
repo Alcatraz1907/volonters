@@ -27,6 +27,12 @@ class LoginVolunteersForm extends  Form {
             'placeholder' => 'Login',
             'required' => 'required',
         ),
+        'options' => array(
+            'label_attributes'=> array(
+                'class' => 'col-lg-7 control-label',
+            ),
+            'label' => 'Логін',
+        ),
     ));
     $this->add(array(
         'name' => 'password', // 'usr_password',
@@ -35,6 +41,12 @@ class LoginVolunteersForm extends  Form {
             'class' => 'form-control',
             'placeholder' => 'Password',
             'required' => 'required',
+        ),
+        'options' => array(
+            'label_attributes'=> array(
+                'class' => 'col-lg-7 control-label',
+            ),
+            'label' => 'Пароль',
         ),
     ));
     $this->add(array(

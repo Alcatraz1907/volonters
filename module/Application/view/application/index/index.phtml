@@ -1,53 +1,74 @@
-<?php
-
-
-$title = 'Login and Search';
-$this->headTitle($title);
-?>
+<html lang="en">
+<head>
+    <?php
+    $title = 'BRATERSTVO';
+    ?>
     <h1><center><?php echo $this->escapeHtml($title); ?></center></h1>
-<?php
-$formDonors->setAttribute('action', $this->url('site/home', array('action' => 'index')));
-$formDonors->prepare();
+</head>
+<body>
+<div class="row">
+    <div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="panel-title">Донор</h1>
+            </div>
+            <div class="panel-body">
+                 <?php
+                    $formDonors->setAttribute('action', $this->url('site/home', array('action' => 'index')));
+                    $formDonors->prepare();
+                    echo $this->form()->openTag($formDonors);
+                    echo $this->formRow($formDonors->get('login'));
+                    echo '<br><br>';
+                    echo $this->formRow($formDonors->get('password'));
+                    echo '<br><br>';
+                    echo $this->formSubmit($formDonors->get('submit'));
+                    echo $this->form()->closeTag();
+                 ?>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="panel-title">Волонтер</h1>
+            </div>
+            <div class="panel-body">
+                <?php
+                    $formVolunteers->setAttribute('action', $this->url('site/home', array('action' => 'index')));
+                    $formVolunteers->prepare();
+                    echo $this->form()->openTag($formDonors);
+                    echo $this->formRow($formVolunteers->get('login'));
+                    echo '<br><br>';
+                    echo $this->formRow($formVolunteers->get('password'));
+                    echo '<br><br>';
+                    echo $this->formSubmit($formVolunteers->get('submit'));
+                    echo $this->form()->closeTag();
+                ?>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 center-block center-block">
 
-echo $this->form()->openTag($formDonors);
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="panel-title">Пошук внеску</h1>
+            </div>
+            <div class="panel-body">
+                <?php
+                    $formSearch->setAttribute('action', $this->url('site/home', array('action' => 'search')));
+                    $formSearch->prepare();
+                    echo $this->form()->openTag($formSearch);
+                    echo $this->formRow($formSearch->get('SearchOfNumber'));
+                    echo '<br><br>';
+                    echo $this->formRow($formSearch->get('SearchOfCod'));
+                    echo '<br><br>';
+                    echo $this->formSubmit($formSearch->get('submit'));
+                    echo $this->form()->closeTag();
+                ?>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 
-
-echo $this->formRow($formDonors->get('mail'));
-echo $this->formRow($formDonors->get('password'));
-echo $this->formSubmit($formDonors->get('submit'));
-
-echo $this->form()->closeTag();
-?>
-
-
-
-
-<?php
-$formVolunteers->setAttribute('action', $this->url('site/home', array('action' => 'index')));
-$formVolunteers->prepare();
-
-echo $this->form()->openTag($formDonors);
-
-
-echo $this->formRow($formVolunteers->get('login'));
-echo $this->formRow($formVolunteers->get('password'));
-echo $this->formSubmit($formVolunteers->get('submit'));
-
-echo $this->form()->closeTag();
-?>
-
-
-
-<?php
-$formSearch->setAttribute('action', $this->url('site/home', array('action' => 'search')));
-$formSearch->prepare();
-
-echo $this->form()->openTag($formSearch);
-
-
-echo $this->formRow($formSearch->get('name'));
-echo $this->formRow($formSearch->get('tracking_code'));
-echo $this->formSubmit($formSearch->get('submit'));
-
-echo $this->form()->closeTag();
-?>
+</html>

@@ -13,11 +13,7 @@ class SearchDonationsInputFilter extends InputFilter {
     public function __construct($sm)
     {
         $this->add(array(
-            'name' => 'direction',
-            'required' => true
-        ));
-        $this->add(array(
-            'name' => 'name',
+            'name' => 'name', // usr_password
             'required' => true,
             'filters' => array(
                 array('name' => 'StripTags'),
@@ -33,9 +29,8 @@ class SearchDonationsInputFilter extends InputFilter {
                 ),
             ),
         ));
-
         $this->add(array(
-            'name' => 'tracking_code',
+            'name' => 'SearchOfCod', // usr_password
             'required' => true,
             'filters' => array(
                 array('name' => 'StripTags'),

@@ -21,13 +21,20 @@ class LoginDonorsForm extends  Form  {
         parent::setAttribute('style','margin-right: 1px;');
 
         $this->add(array(
-            'name' => 'mail', // 'usr_name',
+            'name' => 'login', // 'usr_name',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
-                'placeholder' => 'Mail',
+                'placeholder' => 'Login',
                 'required' => 'required',
+            ),'options' => array(
+                'label_attributes'=> array(
+                    'class' => 'col-lg-7 control-label',
+                ),
+                'label' => 'Логін',
             ),
+
+
         ));
         $this->add(array(
             'name' => 'password', // 'usr_password',
@@ -37,6 +44,13 @@ class LoginDonorsForm extends  Form  {
                 'placeholder' => 'Password',
                 'required' => 'required',
             ),
+            'options' => array(
+                'label_attributes'=> array(
+                    'class' => 'col-lg-7 control-label',
+                ),
+                'label' => 'Пароль',
+            ),
+
         ));
         $this->add(array(
             'name' => 'submit',

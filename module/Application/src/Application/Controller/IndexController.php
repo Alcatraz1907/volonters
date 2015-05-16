@@ -14,16 +14,21 @@ use Application\Form\LoginDonorsInputFilter;
 use Application\Form\LoginVolunteersForm;
 use Application\Form\SearchDonationsForm;
 use Application\Form\SearchDonationsInputFilter;
+
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
+    /**
+     * @return \Zend\Http\Response|ViewModel
+     */
     public function indexAction()
     {
         $form = new LoginDonorsForm();
         $formVolunteers = new LoginVolunteersForm();
         $formSearch = new SearchDonationsForm();
+
 
         $messages = null;
         $request = $this->getRequest();
