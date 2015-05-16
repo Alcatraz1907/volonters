@@ -45,6 +45,42 @@ class IncomesMaterials {
     /** @ORM\Column(type="integer") */
     protected $tracking_code;
 
+//    public function searchByName($search){
+//        $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+//        $users = $em->createQuery("SELECT im.name,
+//                                          im.date,
+//                                          im.categories_main_id,
+//                                          im.categories_sub_id,
+//                                          im.categories_sub_id,
+//                                          im.donor_id,
+//                                          im.full_description,
+//                                          im.image_id,
+//                                          im.tracking_code
+//                                      FROM Application\Entity\IncomesMaterials  im
+//                                      WHERE im.name LIKE :search
+//                                    ")
+//            ->setParameter('search', $search)
+//            ->getResult();
+//        return $users;
+//    }
+//    public function searchByTracingCode($search){
+//        $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+//        $users = $em->createQuery("SELECT im.name,
+//                                          im.date,
+//                                          im.categories_main_id,
+//                                          im.categories_sub_id,
+//                                          im.categories_sub_id,
+//                                          im.donor_id,
+//                                          im.full_description,
+//                                          im.image_id,
+//                                          im.tracking_code
+//                                      FROM Application\Entity\IncomesMaterials  im
+//                                      WHERE im.tracking_code LIKE :search
+//                                    ")
+//            ->setParameter('search', $search)
+//            ->getResult();
+//        return $users;
+//    }
     public function exchangeArray($data)
     {
         foreach ($data as $key => $val) {

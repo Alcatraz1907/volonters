@@ -30,7 +30,7 @@ class SearchDonationsInputFilter extends InputFilter {
             ),
         ));
         $this->add(array(
-            'name' => 'SearchOfCod', // usr_password
+            'name' => 'tracking_code', // usr_password
             'required' => true,
             'filters' => array(
                 array('name' => 'StripTags'),
