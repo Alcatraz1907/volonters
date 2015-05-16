@@ -62,52 +62,6 @@ class IndexController extends AbstractActionController
         ));
     }
 
-    public function loginAction()
-    {
-        /*$form = new LoginDonorsForm();
-        $messages = null;
-        $request = $this->getRequest();
-
-        if ($request->isPost()) {
-            // TODO fix the filters
-            $form->setInputFilter(new LoginDonorsInputFilter($this->getServiceLocator()));
-            $form->setData($request->getPost());
-
-            if ($form->isValid()) {
-                $data = $form->getData();
-                $authService = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
-
-                $adapter = $authService->getAdapter();
-                $adapter->setIdentityValue($data['mail']);
-                $adapter->setCredentialValue($data['password']);
-                $authResult = $authService->authenticate();
-
-                if ($authResult->isValid()) {
-                    $identity = $authResult->getIdentity();
-                    $authService->getStorage()->write($identity);
-
-                    foreach ($authResult->getMessages() as $message) {
-                        $messages .= "$message\n";
-                    }
-                    return $this->redirect()->toRoute('donor-page');
-                }
-            }
-            return new ViewModel(array(
-                'error' => 'Your authentication credentials are not valid',
-                'form' => $form,
-                'messages' => $messages,
-            ));
-        }*/
-    }
-
-    public function authTestAction()
-    {
-        if ($donors = $this->identity()) { // controller plugin
-            // someone is logged !
-        } else {
-            // not logged in
-        }
-    }
     public  function searchAction(){
         $u = $_GET['u'];
         $form = new SearchDonationsForm();

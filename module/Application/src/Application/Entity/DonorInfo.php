@@ -20,6 +20,15 @@ class DonorInfo {
     protected $id;
 
     /** @ORM\Column(type="string") */
+    protected $name;
+
+    /** @ORM\Column(type="string") */
+    protected $surname;
+
+    /** @ORM\Column(type="string") */
+    protected $secondname;
+
+    /** @ORM\Column(type="string") */
     protected $phone;
 
     /** @ORM\Column(type="string") */
@@ -61,6 +70,54 @@ class DonorInfo {
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSurname()
+    {
+        return $this->surname;
+    }
+
+    /**
+     * @param mixed $surname
+     */
+    public function setSurname($surname)
+    {
+        $this->surname = $surname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSecondname()
+    {
+        return $this->secondname;
+    }
+
+    /**
+     * @param mixed $secondname
+     */
+    public function setSecondname($secondname)
+    {
+        $this->secondname = $secondname;
     }
 
     /**
