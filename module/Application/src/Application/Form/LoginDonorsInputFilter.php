@@ -14,7 +14,7 @@ class LoginDonorsInputFilter extends InputFilter{
     public function __construct($sm)
 {
     $this->add(array(
-        'name' => 'login', // 'usr_name'
+        'name' => 'mail',
         'required' => true,
         'filters' => array(
             array('name' => 'StripTags'),
@@ -29,11 +29,18 @@ class LoginDonorsInputFilter extends InputFilter{
                     'max' => 100,
                 ),
             ),
+           /*array(
+                'name'		=> 'DoctrineModule\Validator\ObjectExists',
+                'options' => array(
+                    'object_repository' => $sm->get('doctrine.entitymanager.orm_default')->getRepository('Application\Entity\Donors'),
+                    'fields'            => 'mail'
+                ),
 
+            ),*/
         ),
     ));
     $this->add(array(
-        'name' => 'password', // usr_password
+        'name' => 'password',
         'required' => true,
         'filters' => array(
             array('name' => 'StripTags'),

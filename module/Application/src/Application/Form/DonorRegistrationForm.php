@@ -5,7 +5,7 @@ use Zend\Form\Element;
 use Zend\Form\Form;
 
 class DonorRegistrationForm extends Form {
-    public function __constuct($sm)
+    public function __construct($name = null)
     {
         parent::__construct();
         parent::setAttribute('method', 'post');
@@ -13,65 +13,29 @@ class DonorRegistrationForm extends Form {
         parent::setAttribute('style','margin-right: 1px;');
 
         $this->add(array(
-            'name' => 'name',
+            'name' => 'mail',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
-                'placeholder' => 'Name',
+                'placeholder' => 'E-mail',
                 'required' => 'required',
             ),
         ));
         $this->add(array(
-            'name' => 'surname',
+            'name' => 'password',
             'attributes' => array(
-                'type' => 'text',
+                'type' => 'password',
                 'class' => 'form-control',
-                'placeholder' => 'Surname',
+                'placeholder' => 'Password',
                 'required' => 'required',
             ),
         ));
         $this->add(array(
-            'name' => 'secondname',
+            'name' => 'confirm_password',
             'attributes' => array(
-                'type' => 'text',
+                'type' => 'password',
                 'class' => 'form-control',
-                'placeholder' => 'Second name',
-                'required' => 'required',
-            ),
-        ));
-        $this->add(array(
-            'name' => 'phone',
-            'attributes' => array(
-                'type' => 'text',
-                'class' => 'form-control',
-                'placeholder' => 'Phone',
-                'required' => 'required',
-            ),
-        ));
-        $this->add(array(
-            'name' => 'skype',
-            'attributes' => array(
-                'type' => 'text',
-                'class' => 'form-control',
-                'placeholder' => 'Skype',
-                'required' => 'required',
-            ),
-        ));
-        $this->add(array(
-            'name' => 'facebook',
-            'attributes' => array(
-                'type' => 'text',
-                'class' => 'form-control',
-                'placeholder' => 'Facebook',
-                'required' => 'required',
-            ),
-        ));
-        $this->add(array(
-            'name' => 'vkontakte',
-            'attributes' => array(
-                'type' => 'text',
-                'class' => 'form-control',
-                'placeholder' => 'Vkontakte',
+                'placeholder' => 'Confirm password',
                 'required' => 'required',
             ),
         ));

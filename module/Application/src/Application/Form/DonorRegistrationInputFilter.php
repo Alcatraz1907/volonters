@@ -7,7 +7,7 @@ class DonorRegistrationInputFilter extends InputFilter {
     public function __construct($sm)
     {
         $this->add(array(
-            'name' => 'name',
+            'name' => 'mail',
             'required' => true,
             'filters' => array(
                 array('name' => 'StripTags'),
@@ -19,13 +19,21 @@ class DonorRegistrationInputFilter extends InputFilter {
                     'options' => array(
                         'encoding' => 'UTF-8',
                         'min' => 1,
-                        'max' => 30,
+                        'max' => 100,
                     ),
                 ),
+                /* array(
+                     'name'		=> 'DoctrineModule\Validator\ObjectExists',
+                     'options' => array(
+                         'object_repository' => $sm->get('doctrine.entitymanager.orm_default')->getRepository('Application\Entity\Donors'),
+                         'fields'            => 'mail'
+                     ),
+
+                 ),*/
             ),
         ));
         $this->add(array(
-            'name' => 'surname',
+            'name' => 'password',
             'required' => true,
             'filters' => array(
                 array('name' => 'StripTags'),
@@ -36,14 +44,21 @@ class DonorRegistrationInputFilter extends InputFilter {
                     'name' => 'StringLength',
                     'options' => array(
                         'encoding' => 'UTF-8',
-                        'min' => 1,
-                        'max' => 30,
+                        'min' => 6,
+                        'max' => 34,
                     ),
                 ),
+                /*array(
+                    'name'		=> 'DoctrineModule\Validator\ObjectExists',
+                    'options' => array(
+                        'object_repository' => $sm->get('doctrine.entitymanager.orm_default')->getRepository('Application\Entity\Donors'),
+                        'fields'            => 'password'
+                    ),
+                ),*/
             ),
         ));
         $this->add(array(
-            'name' => 'secondname',
+            'name' => 'confirm_password',
             'required' => true,
             'filters' => array(
                 array('name' => 'StripTags'),
@@ -54,80 +69,14 @@ class DonorRegistrationInputFilter extends InputFilter {
                     'name' => 'StringLength',
                     'options' => array(
                         'encoding' => 'UTF-8',
-                        'min' => 1,
-                        'max' => 30,
+                        'min' => 6,
+                        'max' => 34,
                     ),
                 ),
-            ),
-        ));
-        $this->add(array(
-            'name' => 'phone',
-            'required' => true,
-            'filters' => array(
-                array('name' => 'StripTags'),
-                array('name' => 'StringTrim'),
-            ),
-            'validators' => array(
                 array(
-                    'name' => 'StringLength',
+                    'name'    => 'Identical',
                     'options' => array(
-                        'encoding' => 'UTF-8',
-                        'min' => 1,
-                        'max' => 10,
-                    ),
-                ),
-            ),
-        ));
-        $this->add(array(
-            'name' => 'skype',
-            'required' => true,
-            'filters' => array(
-                array('name' => 'StripTags'),
-                array('name' => 'StringTrim'),
-            ),
-            'validators' => array(
-                array(
-                    'name' => 'StringLength',
-                    'options' => array(
-                        'encoding' => 'UTF-8',
-                        'min' => 1,
-                        'max' => 30,
-                    ),
-                ),
-            ),
-        ));
-        $this->add(array(
-            'name' => 'facebook',
-            'required' => true,
-            'filters' => array(
-                array('name' => 'StripTags'),
-                array('name' => 'StringTrim'),
-            ),
-            'validators' => array(
-                array(
-                    'name' => 'StringLength',
-                    'options' => array(
-                        'encoding' => 'UTF-8',
-                        'min' => 1,
-                        'max' => 30,
-                    ),
-                ),
-            ),
-        ));
-        $this->add(array(
-            'name' => 'vkontakte',
-            'required' => true,
-            'filters' => array(
-                array('name' => 'StripTags'),
-                array('name' => 'StringTrim'),
-            ),
-            'validators' => array(
-                array(
-                    'name' => 'StringLength',
-                    'options' => array(
-                        'encoding' => 'UTF-8',
-                        'min' => 1,
-                        'max' => 30,
+                        'token' => 'password',
                     ),
                 ),
             ),

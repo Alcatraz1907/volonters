@@ -1,8 +1,21 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Oleg
- * Date: 27.04.2015
- * Time: 16:44
- */
-echo"donor-reg";
+
+$title = 'Donor registration';
+$this->headTitle($title);
+?>
+    <h1><center><?php echo $this->escapeHtml($title); ?></center></h1>
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('site/donor-reg', array('action' => 'index')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+
+
+echo $this->formRow($form->get('mail'));
+echo $this->formRow($form->get('password'));
+echo $this->formRow($form->get('confirm_password'));
+echo $this->formSubmit($form->get('submit'));
+
+echo $this->form()->closeTag();
+?>

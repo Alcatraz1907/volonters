@@ -13,7 +13,16 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
 class DonorPageController extends AbstractActionController{
-    public function  indexAction(){
+    public function indexAction(){         //my donations
+
+        return new ViewModel();
+    }
+
+    public function createDonationAction() {
+        return new ViewModel();
+    }
+
+    public function myDataAction() {
         return new ViewModel();
     }
 } 
