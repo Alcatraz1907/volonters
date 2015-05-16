@@ -29,8 +29,6 @@ class IndexController extends AbstractActionController
         $form = new LoginDonorsForm();
         $formVolunteers = new LoginVolunteersForm();
         $formSearch = new SearchDonationsForm();
-
-
         $messages = null;
         $request = $this->getRequest();
         if ($request->isPost()) {
@@ -57,7 +55,6 @@ class IndexController extends AbstractActionController
                     return $this->redirect()->toRoute('site/donor-page');
                 }
             }
-
         }
         return new ViewModel(array(
             'data' => array("data"=>"test2"),
@@ -67,6 +64,4 @@ class IndexController extends AbstractActionController
             'messages' => $messages
         ));
     }
-
-
 }
