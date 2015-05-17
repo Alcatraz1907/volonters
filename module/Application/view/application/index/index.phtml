@@ -17,7 +17,7 @@
                     $formDonors->setAttribute('action', $this->url('site/home', array('action' => 'index')));
                     $formDonors->prepare();
                     echo $this->form()->openTag($formDonors);
-                    echo $this->formRow($formDonors->get('login'));
+                    echo $this->formRow($formDonors->get('mail'));
                     echo '<br><br>';
                     echo $this->formRow($formDonors->get('password'));
                     echo '<br><br>';

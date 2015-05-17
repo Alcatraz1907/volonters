@@ -61,7 +61,7 @@ class DonorInfoInputFilter extends InputFilter {
         ));
         $this->add(array(
             'name' => 'surname',
-            'required' => true,
+            'required' => false,
             'filters' => array(
                 array('name' => 'StripTags'),
                 array('name' => 'StringTrim'),
@@ -79,7 +79,7 @@ class DonorInfoInputFilter extends InputFilter {
         ));
         $this->add(array(
             'name' => 'secondname',
-            'required' => true,
+            'required' => false,
             'filters' => array(
                 array('name' => 'StripTags'),
                 array('name' => 'StringTrim'),
@@ -97,7 +97,7 @@ class DonorInfoInputFilter extends InputFilter {
         ));
         $this->add(array(
             'name' => 'phone',
-            'required' => true,
+            'required' => false,
             'filters' => array(
                 array('name' => 'StripTags'),
                 array('name' => 'StringTrim'),
@@ -115,7 +115,7 @@ class DonorInfoInputFilter extends InputFilter {
         ));
         $this->add(array(
             'name' => 'skype',
-            'required' => true,
+            'required' => false,
             'filters' => array(
                 array('name' => 'StripTags'),
                 array('name' => 'StringTrim'),
@@ -133,7 +133,7 @@ class DonorInfoInputFilter extends InputFilter {
         ));
         $this->add(array(
             'name' => 'facebook',
-            'required' => true,
+            'required' => false,
             'filters' => array(
                 array('name' => 'StripTags'),
                 array('name' => 'StringTrim'),
@@ -151,7 +151,7 @@ class DonorInfoInputFilter extends InputFilter {
         ));
         $this->add(array(
             'name' => 'vkontakte',
-            'required' => true,
+            'required' => false,
             'filters' => array(
                 array('name' => 'StripTags'),
                 array('name' => 'StringTrim'),

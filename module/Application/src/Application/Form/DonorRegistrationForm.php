@@ -43,7 +43,7 @@ class DonorRegistrationForm extends Form {
             'name' => 'submit',
             'attributes' => array(
                 'type' => 'submit',
-                'value' => 'Sign up',
+                'value' => 'Зареєструватись',
                 'id' => 'submitbutton',
                 'class' => 'btn btn-primary',
             ),

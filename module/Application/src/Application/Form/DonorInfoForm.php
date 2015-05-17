@@ -25,7 +25,7 @@ class DonorInfoForm extends Form
         $this->add(array(
             'name' => 'password',
             'attributes' => array(
-                'type' => 'password',
+                'type' => 'text',
                 'class' => 'form-control',
                 'placeholder' => 'Password',
                 'required' => 'required',
@@ -37,7 +37,6 @@ class DonorInfoForm extends Form
                 'type' => 'text',
                 'class' => 'form-control',
                 'placeholder' => 'Name',
-                'required' => 'required',
             ),
         ));
         $this->add(array(
@@ -46,7 +45,6 @@ class DonorInfoForm extends Form
                 'type' => 'text',
                 'class' => 'form-control',
                 'placeholder' => 'Surname',
-                'required' => 'required',
             ),
         ));
         $this->add(array(
@@ -55,7 +53,6 @@ class DonorInfoForm extends Form
                 'type' => 'text',
                 'class' => 'form-control',
                 'placeholder' => 'Second name',
-                'required' => 'required',
             ),
         ));
         $this->add(array(
@@ -64,7 +61,6 @@ class DonorInfoForm extends Form
                 'type' => 'text',
                 'class' => 'form-control',
                 'placeholder' => 'Phone',
-                'required' => 'required',
             ),
         ));
         $this->add(array(
@@ -73,7 +69,6 @@ class DonorInfoForm extends Form
                 'type' => 'text',
                 'class' => 'form-control',
                 'placeholder' => 'Skype',
-                'required' => 'required',
             ),
         ));
         $this->add(array(
@@ -82,7 +77,6 @@ class DonorInfoForm extends Form
                 'type' => 'text',
                 'class' => 'form-control',
                 'placeholder' => 'Facebook',
-                'required' => 'required',
             ),
         ));
         $this->add(array(
@@ -91,14 +85,13 @@ class DonorInfoForm extends Form
                 'type' => 'text',
                 'class' => 'form-control',
                 'placeholder' => 'Vkontakte',
-                'required' => 'required',
             ),
         ));
         $this->add(array(
             'name' => 'submit',
             'attributes' => array(
                 'type' => 'submit',
-                'value' => 'Sign In',
+                'value' => 'Зберегти',
                 'id' => 'submitbutton',
                 'class' => 'btn btn-primary',
             ),

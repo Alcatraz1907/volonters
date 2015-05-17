@@ -21,17 +21,17 @@ class LoginDonorsForm extends  Form  {
         parent::setAttribute('style','margin-right: 1px;');
 
         $this->add(array(
-            'name' => 'login', // 'usr_name',
+            'name' => 'mail',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
-                'placeholder' => 'Login',
+                'placeholder' => 'Mail',
                 'required' => 'required',
             ),'options' => array(
                 'label_attributes'=> array(
                     'class' => 'col-lg-7 control-label',
                 ),
-                'label' => 'Логін',
+                'label' => 'E-mail',
             ),
 
 

@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-3">
+        <ul>
+            <li>
+                <a href="<?php echo $this->url('site/donor-page',array('controller' => 'DonorPage','action' => 'index')); ?>">Мої внески</a>
+            </li>
+            <li>
+                <a href="<?php echo $this->url('site/donor-page',array('controller' => 'DonorPage','action' => 'create-donation')); ?>">Створити внесок</a>
+            </li>
+            <li>
+                <a href="<?php echo $this->url('site/donor-page',array('controller' => 'DonorPage','action' => 'my-data')); ?>">Мої дані</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <?php
+        $form->setAttribute('action', $this->url('site/donor-page', array('action' => 'my-data')));
+        $form->prepare();
+
+        echo $this->form()->openTag($form);
+
+        echo $this->formRow($form->get('mail'));
+        echo $this->formRow($form->get('password'));
+        echo $this->formRow($form->get('name'));
+        echo $this->formRow($form->get('surname'));
+        echo $this->formRow($form->get('secondname'));
+        echo $this->formRow($form->get('phone'));
+        echo $this->formRow($form->get('skype'));
+        echo $this->formRow($form->get('facebook'));
+        echo $this->formRow($form->get('vkontakte'));
+        echo $this->formSubmit($form->get('submit'));
+
+        echo $this->form()->closeTag();
+        echo $message;
+        ?>
+    </div>
+</div>
