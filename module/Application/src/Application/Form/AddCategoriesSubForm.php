@@ -17,28 +17,52 @@ class AddCategoriesSubForm extends Form {
     {
         parent::__construct();
         parent::setAttribute('method', 'post');
-        parent::setAttribute('class', 'navbar-form navbar-left');
-        parent::setAttribute('style','margin-right: 1px;');
+        parent::setAttribute('class', 'form-horizontal');
 
         $this->add(array(
             'name' => 'name',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
-                'placeholder' => 'Назва',
+                'placeholder' => 'Назва підкатегорії',
                 'required' => 'required',
             ),'options' => array(
                 'label_attributes'=> array(
-                    'class' => 'col-lg-7 control-label',
+                    'class' => 'col-lg-4 control-label',
                 ),
-                'label' => 'Назва',
+                'label' => 'Назва підкатегорії',
+            ),
+        ));
+        $this->add(array(
+            'name' => 'institution_id',
+            'type' => 'Zend\Form\Element\Select',
+            'attributes' => array(
+                'class' => 'form-control',
+                'required' => 'required',
+            ),
+            'options' => array(
+                'label_attributes'=> array(
+                    'class' => 'col-lg-4 control-label',
+                ),
+                'label' => 'Institution',
+                'value_options' => array(
+                    '1' => 'School',
+                    '2' => 'University',
+                ),
             ),
         ));
         $this->add(array(
             'name'    => 'categories_main_id',
             'type'    => 'Zend\Form\Element\Select',
+            'attributes' => array(
+                'class' => 'form-control',
+                'required' => 'required',
+            ),
             'options' => array(
-                'label'         => 'Dynamic DbAdapter Select',
+                'label_attributes'=> array(
+                    'class' => 'col-lg-4 control-label',
+                ),
+                'label'         => 'Категорія',
                 'value_options' => $data,
                 'empty_option'  => '--- please choose ---'
             )
@@ -48,7 +72,7 @@ class AddCategoriesSubForm extends Form {
             'name' => 'submit',
             'attributes' => array(
                 'type' => 'submit',
-                'value' => 'Add',
+                'value' => 'Додати',
                 'id' => 'submitbutton',
                 'class' => 'btn btn-primary',
             ),

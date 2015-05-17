@@ -18,8 +18,7 @@ class AddCategoriesMainForm extends Form {
 // we want to ignore the name passed
         parent::__construct();
         parent::setAttribute('method', 'post');
-        parent::setAttribute('class', 'navbar-form navbar-left');
-        parent::setAttribute('style','margin-right: 1px;');
+        parent::setAttribute('class', 'form-horizontal');
 
         $this->add(array(
             'name' => 'name',
@@ -30,19 +29,17 @@ class AddCategoriesMainForm extends Form {
                 'required' => 'required',
             ),'options' => array(
                 'label_attributes'=> array(
-                    'class' => 'col-lg-7 control-label',
+                    'class' => 'col-lg-4 control-label',
                 ),
                 'label' => 'Назва',
             ),
-
-
         ));
 
         $this->add(array(
             'name' => 'submit',
             'attributes' => array(
                 'type' => 'submit',
-                'value' => 'Add',
+                'value' => 'Додати',
                 'id' => 'submitbutton',
                 'class' => 'btn btn-primary',
             ),
