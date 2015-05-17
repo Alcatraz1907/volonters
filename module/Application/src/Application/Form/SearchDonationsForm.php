@@ -21,7 +21,7 @@ class SearchDonationsForm extends Form {
 
 
         $this->add(array(
-            'name' => 'SearchOfNumber', // 'usr_password',
+            'name' => 'name', // 'usr_password',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
@@ -37,7 +37,7 @@ class SearchDonationsForm extends Form {
         ));
 
         $this->add(array(
-            'name' => 'SearchOfCod', // 'usr_password',
+            'name' => 'tracking_code', // 'usr_password',
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',

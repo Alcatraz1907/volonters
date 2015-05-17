@@ -55,12 +55,12 @@
             </div>
             <div class="panel-body">
                 <?php
-                    $formSearch->setAttribute('action', $this->url('site/home', array('action' => 'search')));
+                    $formSearch->setAttribute('action', $this->url('site/donations', array('action' => 'detail')));
                     $formSearch->prepare();
                     echo $this->form()->openTag($formSearch);
-                    echo $this->formRow($formSearch->get('SearchOfNumber'));
+                    echo $this->formRow($formSearch->get('name'));
                     echo '<br><br>';
-                    echo $this->formRow($formSearch->get('SearchOfCod'));
+                    echo $this->formRow($formSearch->get('tracking_code'));
                     echo '<br><br>';
                     echo $this->formSubmit($formSearch->get('submit'));
                     echo $this->form()->closeTag();
