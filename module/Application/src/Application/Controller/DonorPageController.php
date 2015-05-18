@@ -18,8 +18,16 @@ use Zend\View\Model\ViewModel;
 
 class DonorPageController extends AbstractActionController{
     public function indexAction(){         //my donations
-
-        return new ViewModel();
+        $donor = new Donors();
+        $donor = $this->identity();
+        $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+        $incomes = $em->createQuery("SELECT im.name,
+                                            im.date,
+                                            im.visible
+                                      FROM Application\Entity\IncomesMaterials  im
+                                      WHERE im.donor_id = '".$donor->getId()."'")
+                ->getResult();
+        return new ViewModel(array('incomes' => $incomes));
     }
 
     public function createDonationAction() {

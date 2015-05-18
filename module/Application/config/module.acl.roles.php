@@ -9,6 +9,8 @@ return array(
     'guest'=> array(
         'site/home',
         'site/admin',
+        'site/donor-reg',
+        'site/donor-page',
 
 
     ),
@@ -18,5 +20,6 @@ return array(
     'volunteers'=> array(
 
     ),
+
 
 );

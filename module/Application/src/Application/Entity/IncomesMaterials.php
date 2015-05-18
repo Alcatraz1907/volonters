@@ -45,6 +45,9 @@ class IncomesMaterials {
     /** @ORM\Column(type="integer") */
     protected $tracking_code;
 
+    /** @ORM\Column(type="integer") */
+    protected $visible;
+
 //    public function searchByName($search){
 //        $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
 //        $users = $em->createQuery("SELECT im.name,
@@ -240,4 +243,19 @@ class IncomesMaterials {
         $this->tracking_code = $tracking_code;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getVisible()
+    {
+        return $this->visible;
+    }
+
+    /**
+     * @param mixed $visible
+     */
+    public function setVisible($visible)
+    {
+        $this->visible = $visible;
+    }
 } 
