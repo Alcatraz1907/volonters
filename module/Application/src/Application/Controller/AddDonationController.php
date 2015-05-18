@@ -16,7 +16,7 @@ use Application\Form\AddDonationForm;
 
 class AddDonationController extends AbstractActionController
 {
-    public function indexAction()
+    public function addDonationAction()
     {
         $formAddDonation =new AddDonationForm();
         return new ViewModel((array(
@@ -25,5 +25,26 @@ class AddDonationController extends AbstractActionController
             'formAddDonation' => $formAddDonation,
 
         )));
+    }
+    public function indexAction(){
+
+
+
+                $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+
+                    $users = $em->createQuery("SELECT im.name
+
+                                      FROM Application\Entity\CategoriesMain im
+
+                                    ")
+
+
+                        ->getResult();
+
+        return new ViewModel(
+            array(
+                'users'	=> $users
+            )
+        );
     }
 } 

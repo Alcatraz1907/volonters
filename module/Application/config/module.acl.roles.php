@@ -9,13 +9,15 @@ return array(
     'guest'=> array(
         'site/home',
         'site/admin',
-
+        'site/add-donation'
 
     ),
     'admin'=> array(
         'site/donations',
+
     ),
     'volunteers'=> array(
+
 
     ),
 

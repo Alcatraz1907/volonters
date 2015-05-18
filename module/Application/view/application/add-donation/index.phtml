@@ -8,167 +8,43 @@
 </head>
 <body>
 <fieldset>
-<div class="container">
-    <div class="row">
+    <div class="container">
+        <div class="row">
             <div class="col-lg-3">
                 <p class="lead">Меню</p>
-                    <div class="list-group">
-                        <a href="#" class="list-group-item active">Каталог</a>
-                        <a href="#" class="list-group-item">Додати внесок</a>
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">Каталог</a>
+                    <a href="#" class="list-group-item">Додати внесок</a>
 
-                    </div>
+                </div>
             </div>
 
 
-        <div class="col-lg-9">
+            <div class="col-lg-9">
+                <table border="1">
 
-        <div class="form-group">
-               <?php
-               $formAddDonation->setAttribute('action', $this->url('site/home', array('action' => 'index')));
-               $formAddDonation->prepare();
-               echo $this->form()->openTag($formAddDonation);
-               ?>
-            <div class="row">
-                <div class="col-md-2">
                     <?php
-                         echo $this->formLabel($formAddDonation->get('Sum'));
-                    ?>
-                </div>
-                <div class="col-md-10">
-                    <?php
-                         echo $this->formElement($formAddDonation->get('Sum'));
-                    ?>
-                </div>
-                    <?php
-                        echo $this->formElementErrors($formAddDonation->get('Sum'));
-                    ?>
-            </div>
-        </div>
 
-        <div class="form-group">
-            <div class="row">
-                <div class="col-md-2">
-                    <?php
-                        echo $this->formLabel($formAddDonation->get('image'));
-                    ?>
-                </div>
-                <div class="col-md-10">
-                    <?php
-                        echo $this->formElement($formAddDonation->get('image'));
-                    ?>
-                </div>
-                    <?php
-                        echo $this->formElementErrors($formAddDonation->get('image'));
-                    ?>
-            </div>
-        </div>
+                    echo "<tr>";
+                    foreach ($users as $user){
 
-        <div class="form-group">
-            <div class="row">
-                <div class="col-md-2">
-                    <?php
-                        echo $this->formLabel($formAddDonation->get('Description'));
-                    ?>
-                </div>
-                <div class="col-md-10">
-                    <?php
-                        echo $this->formElement($formAddDonation->get('Description'));
-                    ?>
-                </div>
-                    <?php
-                        echo $this->formElementErrors($formAddDonation->get('Description'));
-                    ?>
-            </div>
-        </div>
 
-        <div class="form-group">
-            <div class="row">
-                <div class="col-md-2">
-                    <?php
-                        echo $this->formLabel($formAddDonation->get('Category'));
-                    ?>
-                </div>
-                <div class="col-md-10">
-                    <?php
-                        echo $this->formElement($formAddDonation->get('Category'));
-                    ?>
-                </div>
-                    <?php
-                        echo $this->formElementErrors($formAddDonation->get('Category'));
-                    ?>
-            </div>
-        </div>
 
-        <div class="form-group">
-            <div class="row">
-                <div class="col-md-2">
-                    <?php
-                        echo $this->formLabel($formAddDonation->get('Subcategory'));
-                    ?>
-                </div>
-                <div class="col-md-10">
-                    <?php
-                        echo $this->formElement($formAddDonation->get('Subcategory'));
-                    ?>
-                </div>
-                    <?php
-                        echo $this->formElementErrors($formAddDonation->get('Subcategory'));
-                    ?>
-            </div>
-        </div>
 
-        <div class="form-group">
-            <div class="row">
-                <div class="col-md-2">
-                    <?php
-                        echo $this->formLabel($formAddDonation->get('Project'));
-                    ?>
-                </div>
-                <div class="col-md-10">
-                    <?php
-                        echo $this->formElement($formAddDonation->get('Project'));
-                    ?>
-                </div>
-                    <?php
-                        echo $this->formElementErrors($formAddDonation->get('Project'));
-                    ?>
-            </div>
-        </div>
+                        echo "<td><h1>".$user['name']."</h1></td>";
 
-        <div class="form-group">
-            <div class="row">
-                <div class="col-md-2">
-                    <?php
-                        echo $this->formLabel($formAddDonation->get('Number'));
+
+                    }
+                    echo "<tr>";
+
+
                     ?>
+                    <table>
                 </div>
-                <div class="col-md-10">
-                    <?php
-                        echo $this->formElement($formAddDonation->get('Number'));
-                    ?>
-                </div>
-                    <?php
-                        echo $this->formElementErrors($formAddDonation->get('Number'));
-                    ?>
-            </div>
-        </div>
-            <?php
-                echo $this->form()->closeTag();
-            ?>
-        <div class="form-group">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="btn btn-primary">
-                        <?php
-                            echo $this->formSubmit($formAddDonation->get('submit'));
-                        ?>
-                    </div>
-                </div>
-             </div>
-        </div>
+
+                
         </div>
     </div>
-</div>
 </fieldset>
 
 </body>
