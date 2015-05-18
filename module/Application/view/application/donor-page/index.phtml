@@ -34,7 +34,7 @@
                             echo 'Приховано';
                         }
                         else { ?>
-                        <a href="<?php echo $this->url('site/donations',array('controller' => 'Donations','action' => 'index')); ?>">Не відображати</a>
+                        <a href="<?php echo $this->url('site/donor-page',array('controller' => 'DonorPage','action' => 'hide-donation','id' => $income['id'])); ?>">Не відображати</a>
                         <?php
                         }
                         ?>

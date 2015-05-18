@@ -11,7 +11,7 @@ return array(
         'site/admin',
         'site/donor-reg',
         'site/donor-page',
-
+        'site/donations',
 
     ),
     'admin'=> array(
