@@ -13,8 +13,8 @@
             <div class="col-lg-3">
                 <p class="lead">Меню</p>
                 <div class="list-group">
-                    <a href="#" class="list-group-item active">Каталог</a>
-                    <a href="#" class="list-group-item">Додати внесок</a>
+                    <a href="<?php echo $this->url('site/volunteers',array('controller' => 'AddDonation','action' => 'index')); ?>" class="list-group-item">Каталог</a>
+                    <a href="<?php echo $this->url('site/volunteers',array('controller' => 'AddDonation','action' => 'volunteers')); ?>" class="list-group-item active">Додати внесок</a>
 
                 </div>
             </div>
@@ -24,7 +24,7 @@
 
                 <div class="form-group">
                     <?php
-                    $formAddDonation->setAttribute('action', $this->url('site/home', array('action' => 'index')));
+                    $formAddDonation->setAttribute('action', $this->url('site/volunteers', array('action' => 'volunteers')));
                     $formAddDonation->prepare();
                     echo $this->form()->openTag($formAddDonation);
                     ?>
