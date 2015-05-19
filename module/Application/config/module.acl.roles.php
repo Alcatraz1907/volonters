@@ -9,7 +9,9 @@ return array(
     'guest'=> array(
         'site/home',
         'site/admin',
-
+        'site/donor-reg',
+        'site/donor-page',
+        'site/donations',
 
     ),
     'admin'=> array(
